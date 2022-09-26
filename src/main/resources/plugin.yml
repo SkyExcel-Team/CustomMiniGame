@@ -1,0 +1,4 @@
+name: MiniGame
+version: 1.0
+api-version: 1.13
+main: me.skyexcel.minigame.MiniGame
