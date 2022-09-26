@@ -40,7 +40,6 @@ public abstract class PlayerEvents implements RegisterEvent,
         PlayerExpChangeEvent,
         PlayerFishEvent,
         PlayerGameModeChangeEvent,
-        PlayerHarvestBlockEvent,
         PlayerHideEntityEvent,
         PlayerInteractAtEntityEvent,
         PlayerInteractEntityEvent,
@@ -76,7 +75,8 @@ public abstract class PlayerEvents implements RegisterEvent,
         PlayerVelocityEvent,
         Listener {
     public PlayerEvents() {
-        Bukkit.getPluginManager().registerEvents(this, MiniGame.plugin);
+
+        Bukkit.getServer().getPluginManager().registerEvents(this, MiniGame.plugin);
     }
 
     @EventHandler
@@ -214,10 +214,6 @@ public abstract class PlayerEvents implements RegisterEvent,
         PlayerGameModeChangeEvent(event);
     }
 
-    @EventHandler
-    public void onPlayerHarvestBlockEvent(org.bukkit.event.player.PlayerHarvestBlockEvent event) {
-        PlayerHarvestBlockEvent(event);
-    }
 
     @EventHandler
     public void onPlayerHideEntityEvent(org.bukkit.event.player.PlayerHideEntityEvent event) {
