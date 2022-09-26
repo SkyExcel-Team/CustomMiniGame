@@ -12,7 +12,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-public abstract class PlayerEvents implements RegisterEvent,
+/**
+ * Include every event from spigot for Mini Game,
+ */
+public abstract class PlayerEvents implements
         PlayerJoinEvent,
         PlayerQuitEvent,
         PlayerBedEnterEvent,
