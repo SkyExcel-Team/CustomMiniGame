@@ -20,7 +20,7 @@ public class MiniGame extends JavaPlugin implements Listener {
 
         new BedWar("BedWar");
 
-        new SkyWar();
+
 
         Bukkit.getPluginManager().registerEvents(this, this);
     }
