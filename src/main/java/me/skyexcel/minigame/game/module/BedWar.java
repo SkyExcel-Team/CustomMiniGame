@@ -1,6 +1,9 @@
 package me.skyexcel.minigame.game.module;
 
 import me.skyexcel.minigame.game.Game;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -33,4 +36,13 @@ public class BedWar extends Game {
         event.setCancelled(true);
         event.getPlayer().sendMessage(event.getMessage());
     }
+
+    @Override
+    public void PlayerBedEnterEvent(PlayerBedEnterEvent event) {
+        super.PlayerBedEnterEvent(event);
+        event.getPlayer().sendMessage("Test");
+    }
+
+
+
 }
