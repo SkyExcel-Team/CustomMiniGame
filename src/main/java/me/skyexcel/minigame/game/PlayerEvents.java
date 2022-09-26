@@ -417,8 +417,8 @@ public abstract class PlayerEvents implements RegisterEvent,
      * Block Event Functions
      */
     @EventHandler
-    public void onBlockBreak(org.bukkit.event.block.BlockBreakEvent event) {
-
+    public void onBlockBreakEvent(org.bukkit.event.block.BlockBreakEvent event) {
+        BlockBreakEvent(event);
     }
 
     @EventHandler

@@ -4,6 +4,7 @@ import me.skyexcel.minigame.game.Game;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -43,6 +44,14 @@ public class BedWar extends Game {
         event.getPlayer().sendMessage("Test");
     }
 
+    @Override
+    public void BlockBreakEvent(BlockBreakEvent event) {
+        super.BlockBreakEvent(event);
+        event.getPlayer().sendMessage("BREAK : " + event.getBlock().getType().name());
+    }
 
-
+    @Override
+    public void BlockPlaceEvent(BlockPlaceEvent event) {
+        event.getPlayer().sendMessage("PLACE : " + event.getBlock().getType().name());
+    }
 }
