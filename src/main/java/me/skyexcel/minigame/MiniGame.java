@@ -1,7 +1,6 @@
 package me.skyexcel.minigame;
 
 import me.skyexcel.minigame.game.module.BedWar;
-import me.skyexcel.minigame.game.module.SkyWar;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,8 +17,8 @@ public class MiniGame extends JavaPlugin implements Listener {
 
         plugin = this;
 
-        new BedWar("BedWar");
-
+        BedWar bedWar = new BedWar("BedWar", "game/");
+        bedWar.setWorldname("BedWar");
 
 
         Bukkit.getPluginManager().registerEvents(this, this);

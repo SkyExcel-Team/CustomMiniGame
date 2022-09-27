@@ -1,12 +1,13 @@
 package me.skyexcel.minigame.game;
 
 import me.skyexcel.minigame.MiniGame;
-import me.skyexcel.minigame.event.block.*;
+import me.skyexcel.minigame.api.event.block.*;
 
-import me.skyexcel.minigame.event.player.bed.PlayerBedEnterEvent;
-import me.skyexcel.minigame.event.player.bed.PlayerBedLeaveEvent;
-import me.skyexcel.minigame.event.player.*;
-import me.skyexcel.minigame.event.player.buket.*;
+import me.skyexcel.minigame.api.event.inventory.*;
+import me.skyexcel.minigame.api.event.player.bed.PlayerBedEnterEvent;
+import me.skyexcel.minigame.api.event.player.bed.PlayerBedLeaveEvent;
+import me.skyexcel.minigame.api.event.player.*;
+import me.skyexcel.minigame.api.event.player.buket.*;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -109,6 +110,20 @@ public abstract class PlayerEvents implements
         SpongeAbsorbEvent,
         SignChangeEvent,
 
+        BrewEvent,
+        BrewingStandFuelEvent,
+        CraftItemEvent,
+        FurnaceExtractEvent,
+        FurnaceBurnEvent,
+        FurnaceSmeltEvent,
+        InventoryClickEvent,
+        InventoryCloseEvent,
+        InventoryDragEvent,
+        InventoryEvent,
+        InventoryMoveItemEvent,
+        InventoryOpenEvent,
+        InventoryPickupItemEvent,
+        PrepareAnvilEvent,
         Listener {
     public PlayerEvents() {
         Bukkit.getServer().getPluginManager().registerEvents(this, MiniGame.plugin);
@@ -576,4 +591,45 @@ public abstract class PlayerEvents implements
         SpongeAbsorbEvent(event);
     }
 
+    /**
+     * Inventory Events
+     */
+
+    @EventHandler
+    public void onBrewEvent(org.bukkit.event.inventory.BrewEvent event) {
+        BrewEvent(event);
+    }
+    @EventHandler
+    public void onBrewingStandFuelEvent(org.bukkit.event.inventory.BrewingStandFuelEvent event) {
+        BrewingStandFuelEvent(event);
+    }
+    @EventHandler
+    public void onCraftItemEvent(org.bukkit.event.inventory.CraftItemEvent event) {
+        CraftItemEvent(event);
+    }
+    @EventHandler
+    public void onFurnaceBurnEvent(org.bukkit.event.inventory.FurnaceBurnEvent event) {
+        FurnaceBurnEvent(event);
+    }
+    @EventHandler
+    public void onFurnaceExtractEvent(org.bukkit.event.inventory.FurnaceExtractEvent event) {
+        FurnaceExtractEvent(event);
+    }
+
+    @EventHandler
+    public void onInventoryClickEvent(org.bukkit.event.inventory.InventoryClickEvent event) {
+        InventoryClickEvent(event);
+    }
+    @EventHandler
+    public void onInventoryCloseEvent(org.bukkit.event.inventory.InventoryCloseEvent event) {
+        InventoryCloseEvent(event);
+    }
+    @EventHandler
+    public void onInventoryPickupItemEvent(org.bukkit.event.inventory.InventoryPickupItemEvent event) {
+        InventoryPickupItemEvent(event);
+    }
+    @EventHandler
+    public void onPrepareAnvilEvent(org.bukkit.event.inventory.PrepareAnvilEvent event) {
+        PrepareAnvilEvent(event);
+    }
 }
