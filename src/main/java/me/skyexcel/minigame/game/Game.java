@@ -1,5 +1,6 @@
 package me.skyexcel.minigame.game;
 
+import me.skyexcel.minigame.game.status.GameStatus;
 import me.skyexcel.minigame.game.team.TeamType;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -7,6 +8,8 @@ import org.bukkit.WorldCreator;
 
 public abstract class Game extends PlayerEvents {
     private World world;
+
+    private GameStatus status;
 
     private int Max;
 
@@ -48,5 +51,13 @@ public abstract class Game extends PlayerEvents {
 
     public int getMax() {
         return Max;
+    }
+
+    public void setStatus(GameStatus status) {
+        this.status = status;
+    }
+
+    public GameStatus getStatus() {
+        return status;
     }
 }

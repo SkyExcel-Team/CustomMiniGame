@@ -2,8 +2,8 @@ package me.skyexcel.minigame.game.module;
 
 import me.skyexcel.minigame.MiniGame;
 import me.skyexcel.minigame.game.Game;
+import me.skyexcel.minigame.game.status.GameStatus;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -11,7 +11,6 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import skyexcel.data.file.Config;
 import java.util.ArrayList;
@@ -26,6 +25,10 @@ public class BedWar extends Game {
     private Config config;
 
     private static List<Material> materials = new ArrayList<>();
+
+    /**
+     * Resister the material map
+     */
 
     static {
         materials.add(Material.WHITE_BED);
@@ -48,6 +51,7 @@ public class BedWar extends Game {
         this.path = path;
         config = new Config(path + name);
         config.setPlugin(MiniGame.plugin);
+        setMax(1);
     }
 
     public void setWorldname(String worldname) {
@@ -55,6 +59,13 @@ public class BedWar extends Game {
             System.out.println(worldname);
         }
         this.worldname = worldname;
+    }
+
+    public void JointoGame(Player player){
+        if(getNow() == getMax()){
+
+            setStatus(GameStatus.Playing);
+        }
     }
 
     public String getWorldname() {
