@@ -1,6 +1,5 @@
 package me.skyexcel.minigame;
 
-import me.skyexcel.minigame.game.module.BedWar.BedWar;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
