@@ -21,7 +21,7 @@ dependencies {
     implementation fileTree(dir: 'api', include: ['*.jar'])
     implementation 'com.github.SkyExcel-Team:SkyExcelCore:1.1.0'
     compileOnly group: "com.comphenix.protocol", name: "ProtocolLib", version: "4.7.0";
-    implementation 'com.github.SkyExcel-Team:SkyExcelCore:v1.0.10'
+    implementation 'com.github.SkyExcel-Team:SkyExcelCore:1.1.1'
 }
 
 jar {

@@ -1,15 +1,26 @@
 package me.skyexcel.minigame.game.module.BedWar.event;
 
+import me.skyexcel.minigame.MiniGame;
 import me.skyexcel.minigame.game.PlayerEvents;
+import me.skyexcel.minigame.game.status.TeamStatus;
+import me.skyexcel.minigame.game.team.TeamType;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scoreboard.DisplaySlot;
+import skyexcel.scoreboard.ScoreBoardAPI;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BedWarEvent extends PlayerEvents {
     private static List<Material> materials = new ArrayList<>();
+
+    private String Break = "BED DESTRUCTION";
 
     static {
         materials.add(Material.WHITE_BED);
@@ -25,10 +36,6 @@ public class BedWarEvent extends PlayerEvents {
         materials.add(Material.LIGHT_BLUE_BED);
         materials.add(Material.LIGHT_GRAY_BED);
     }
-    @Override
-    public void PlayerJoinEvent(PlayerJoinEvent event) {
-        event.setJoinMessage("test");
-    }
 
     @Override
     public void InventoryClickEvent(InventoryClickEvent event) {
@@ -38,5 +45,25 @@ public class BedWarEvent extends PlayerEvents {
     @Override
     public void BlockBreakEvent(BlockBreakEvent event) {
         super.BlockBreakEvent(event);
+    }
+
+
+    private TeamType team;
+
+    @Override
+    public void PlayerJoinEvent(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+
+        team = TeamType.RED;
+
+
+        Log(Break, player.getDisplayName());
+
+    }
+
+    public void Log(String cause, String message) {
+        Bukkit.broadcastMessage("");
+        Bukkit.broadcastMessage(ChatColor.WHITE + "" + ChatColor.BOLD + cause + " > " + ChatColor.RESET + message);
+        Bukkit.broadcastMessage("");
     }
 }

@@ -33,9 +33,7 @@ public abstract class Game extends PlayerEvents {
     public World getWorld() {
         return world;
     }
-    public void setTeam(TeamType team){
 
-    }
 
     /**
      * Getting world player size
