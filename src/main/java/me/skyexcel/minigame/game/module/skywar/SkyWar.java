@@ -1,4 +1,4 @@
-package me.skyexcel.minigame.game.module;
+package me.skyexcel.minigame.game.module.skywar;
 
 import me.skyexcel.minigame.game.Game;
 import org.bukkit.event.player.*;

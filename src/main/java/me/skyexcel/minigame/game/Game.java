@@ -1,15 +1,22 @@
 package me.skyexcel.minigame.game;
 
-import me.skyexcel.minigame.game.status.GameStatus;
-import me.skyexcel.minigame.game.team.TeamType;
+import me.skyexcel.minigame.MiniGame;
+import me.skyexcel.minigame.api.cooltime.CoolTime;
+import me.skyexcel.minigame.game.module.bedwars.GameStatus;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
+import skyexcel.data.Time;
 
 public abstract class Game extends PlayerEvents {
     private World world;
 
-    private GameStatus status;
+    private GameStatus gameStatus;
+
+
+    private CoolTime coolTime;
+
+    private Time time;
 
     private int Max;
 
@@ -52,10 +59,11 @@ public abstract class Game extends PlayerEvents {
     }
 
     public void setStatus(GameStatus status) {
-        this.status = status;
+        this.gameStatus = status;
+        time = new Time(0,0,gameStatus.getMin(),0);
+        coolTime = new CoolTime(time);
+        coolTime.runTaskTimer(MiniGame.plugin,0,20);
     }
 
-    public GameStatus getStatus() {
-        return status;
-    }
+
 }

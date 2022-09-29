@@ -1,9 +1,7 @@
-package me.skyexcel.minigame.game.module.BedWar.event;
+package me.skyexcel.minigame.game.module.bedwars.event;
 
-import me.skyexcel.minigame.MiniGame;
 import me.skyexcel.minigame.game.PlayerEvents;
-import me.skyexcel.minigame.game.status.TeamStatus;
-import me.skyexcel.minigame.game.team.TeamType;
+import me.skyexcel.minigame.game.module.bedwars.team.TeamType;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -11,8 +9,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.scoreboard.DisplaySlot;
-import skyexcel.scoreboard.ScoreBoardAPI;
 
 import java.util.ArrayList;
 import java.util.List;

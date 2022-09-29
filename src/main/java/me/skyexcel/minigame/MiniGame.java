@@ -1,7 +1,7 @@
 package me.skyexcel.minigame;
 
-import me.skyexcel.minigame.game.module.BedWar.BedWar;
-import me.skyexcel.minigame.game.team.TeamType;
+import me.skyexcel.minigame.game.module.bedwars.BedWars;
+import me.skyexcel.minigame.game.module.bedwars.team.TeamType;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
@@ -12,13 +12,13 @@ import skyexcel.scoreboard.ScoreBoardAPI;
 public class MiniGame extends JavaPlugin implements Listener {
 
     public static MiniGame plugin;
-    public static BedWar bedWar;
+    public static BedWars bedWar;
 
     @Override
     public void onEnable() {
         plugin = this;
 
-        bedWar = new BedWar("BedWar");
+        bedWar = new BedWars("BedWar");
 
         Bukkit.getOnlinePlayers().stream().forEach(player -> {
 

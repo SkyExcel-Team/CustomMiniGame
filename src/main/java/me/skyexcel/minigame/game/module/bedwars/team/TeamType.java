@@ -1,4 +1,4 @@
-package me.skyexcel.minigame.game.team;
+package me.skyexcel.minigame.game.module.bedwars.team;
 
 import org.bukkit.ChatColor;
 
