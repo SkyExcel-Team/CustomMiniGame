@@ -20,30 +20,6 @@ public class MiniGame extends JavaPlugin implements Listener {
 
         bedWar = new BedWars("BedWar");
 
-        Bukkit.getOnlinePlayers().stream().forEach(player -> {
-
-            ScoreBoardAPI api = new ScoreBoardAPI(ChatColor.YELLOW + "" + ChatColor.BOLD + "BED WARS", "dummy");
-
-            api.newScoreBoard(DisplaySlot.SIDEBAR);
-
-            int i = 3;
-
-            api.newLine(ChatColor.GRAY + "04/02/02              ", 14);
-
-            api.newLine("  ", 13);
-            api.newLine("DIAMOND II in " + ChatColor.GREEN + "3:41", 12);
-            api.newLine(" ", 11);
-
-            for (TeamType type : TeamType.values()) {
-                api.newLine(type.getPrefix() + " " + type.getName() + ":" + ChatColor.GREEN + " " + ChatColor.BOLD + "✓", i++);
-            }
-
-            api.newLine("", 2);
-
-            api.newLine(ChatColor.YELLOW + "www.skyexcel.net", 1);
-
-            player.setScoreboard(api.getBoard());
-        });
     }
 
     @Override
