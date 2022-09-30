@@ -38,7 +38,6 @@ public class MiniGame extends JavaPlugin implements Listener {
                 api.newLine(type.getPrefix() + " " + type.getName() + ":" + ChatColor.GREEN + " " + ChatColor.BOLD + "✓", i++);
             }
 
-
             api.newLine("", 2);
 
             api.newLine(ChatColor.YELLOW + "www.skyexcel.net", 1);

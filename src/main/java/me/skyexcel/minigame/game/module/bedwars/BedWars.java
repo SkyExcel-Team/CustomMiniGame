@@ -20,7 +20,8 @@ public class BedWars extends Game {
         super();
         this.name = name;
         new BedWarEvent();
-
+        setMax(1);
+        System.out.println(getNow());
     }
 
 
