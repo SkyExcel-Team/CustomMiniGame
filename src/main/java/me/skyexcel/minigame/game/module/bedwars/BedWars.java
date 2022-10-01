@@ -28,24 +28,23 @@ public class BedWars extends Game {
         new BedWarEvent();
         setMax(1);
         System.out.println(getNow());
-        time = new Time(0, 0, 6, 0);
+        time = new Time(0,0,6,0);
     }
 
 
     /**
      * This method will set the time by the gameStatus
-     *
      * @param gameStatus Game status
      */
     public void setGameStatus(GameStatus gameStatus) {
         this.gameStatus = gameStatus;
-        time = new Time(0, 0, gameStatus.getMin(), 0);
+        time = new Time(0,0,gameStatus.getMin(),0);
         coolTime = new CoolTime(time);
-        coolTime.runTaskTimer(MiniGame.plugin, 0, 20);
+        coolTime.runTaskTimer(MiniGame.plugin,0,20);
     }
 
 
-    public void ScoreBoard(Player player) {
+    public void ScoreBoard(Player player){
 
         ScoreBoardAPI api = new ScoreBoardAPI(ChatColor.YELLOW + "" + ChatColor.BOLD + "BED WARS", "dummy");
 
@@ -56,7 +55,7 @@ public class BedWars extends Game {
         api.newLine(ChatColor.GRAY + "04/02/02              ", 14);
 
         api.newLine("  ", 13);
-        api.newLine("DIAMOND II in " + ChatColor.GREEN + getTime().MINUTE() + ":" + getTime().SECOND(), 12);
+        api.newLine("DIAMOND II in " + ChatColor.GREEN +getTime().MINUTE() + ":" + getTime().SECOND(), 12);
         api.newLine(" ", 11);
 
         for (TeamType type : TeamType.values()) {
@@ -69,7 +68,6 @@ public class BedWars extends Game {
 
         player.setScoreboard(api.getBoard());
     }
-
     public String getName() {
         return name;
     }
@@ -77,7 +75,6 @@ public class BedWars extends Game {
     public Time getTime() {
         return time;
     }
-
     public GameStatus getGameStatus() {
         return gameStatus;
     }

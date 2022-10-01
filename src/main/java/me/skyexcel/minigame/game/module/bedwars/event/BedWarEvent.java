@@ -1,6 +1,8 @@
 package me.skyexcel.minigame.game.module.bedwars.event;
 
+import me.skyexcel.minigame.MiniGame;
 import me.skyexcel.minigame.game.PlayerEvents;
+import me.skyexcel.minigame.game.module.bedwars.GameStatus;
 import me.skyexcel.minigame.game.module.bedwars.team.TeamType;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -52,7 +54,8 @@ public class BedWarEvent extends PlayerEvents {
 
         team = TeamType.RED;
 
-
+        MiniGame.bedWar.setGameStatus(GameStatus.DIAMOND);
+        MiniGame.bedWar.ScoreBoard(player);
         Log(Break, player.getDisplayName());
 
     }
