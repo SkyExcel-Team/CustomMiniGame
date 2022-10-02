@@ -1,13 +1,31 @@
 package me.skyexcel.minigame.api.command;
 
-public abstract class Args  {
-    private String arg;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-    public Args(String arg) {
-        this.arg = arg;
+public class Args  {
+    private List<String> arg = new ArrayList<>();
+
+    private boolean is;
+
+    public Args(String... arg) {
+        Arrays.stream(arg).forEach(args ->{
+            this.arg.add(args);
+            System.out.println(args);
+        });
     }
 
-    public String getArg() {
+
+    public void setIs(boolean is) {
+        this.is = is;
+    }
+
+    public List<String> getArg() {
         return arg;
+    }
+
+    public boolean getIs() {
+        return is;
     }
 }

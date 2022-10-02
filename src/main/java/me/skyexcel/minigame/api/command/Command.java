@@ -4,7 +4,6 @@ import me.skyexcel.minigame.MiniGame;
 import org.bukkit.command.CommandSender;
 import skyexcel.data.file.Config;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Command {
@@ -23,12 +22,11 @@ public class Command {
             }
         };
 
-        Tab tab = new Tab(commands, List.of(
-                List.of(Arrays.toString(config.getFileList())),
-                List.of("test2", "asdf2"),
-                List.of("test3", "asdf3", "1234"))) {
+        Tab tab = new Tab(commands,
+                List.of(new Args("asdf"),
+                        new Args("test","asdf") )) {
         };
 
-        tab.select(1).of(0).is(config.getFileList() != null);
+        tab.select(1).of(0).is(tab.select(0).getArgs().equalsIgnoreCase("asdf"));
     }
 }
